@@ -1,0 +1,6 @@
+##No evidence for
+<gov.va.vinci.types.Metastasis_Negation/>\s*<gov.va.vinci.types.Metastasis_Pattern/>
+##Diagnosis of metastatic disease is not suspected
+<gov.va.vinci.types.Metastasis_Pattern/>\s*<gov.va.vinci.types.Metastasis_Negation/>
+##No scintographic evidence for
+<gov.va.vinci.types.Metastasis_Negation/>\s*<gov.va.vinci.types.Metastasis_Image/>\s*<gov.va.vinci.types.Metastasis_Pattern/>

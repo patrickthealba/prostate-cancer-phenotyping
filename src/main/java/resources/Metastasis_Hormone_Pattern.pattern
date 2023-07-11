@@ -1,0 +1,7 @@
+##castrate resistant
+<gov.va.vinci.types.Metastasis_Hormone_Term/>\s*<gov.va.vinci.types.Metastasis_Hormone_Modifier/>
+##castrate-resistant
+<gov.va.vinci.types.Metastasis_Hormone_Term/>-<gov.va.vinci.types.Metastasis_Hormone_Modifier/>
+##castrate - resistant
+<gov.va.vinci.types.Metastasis_Hormone_Term/> - <gov.va.vinci.types.Metastasis_Hormone_Modifier/>
+

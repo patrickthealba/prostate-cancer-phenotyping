@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+    <primitive>false</primitive>
+    <delegateAnalysisEngineSpecifiers>
+        <delegateAnalysisEngine key="Section Regex2112b94fa589-0ab6-46f2-aa8f-c6b5eebb458e">
+            <import location="/H:/workspace/pneumonia/config/desc/Section Regex2112b94fa589-0ab6-46f2-aa8f-c6b5eebb458e818386010885360664.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="OverlapFilter2112e948f6d7-5f31-4200-b20a-b7d262f11c66">
+            <import location="/H:/workspace/pneumonia/config/desc/OverlapFilter2112e948f6d7-5f31-4200-b20a-b7d262f11c661581324188549506204.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="SectionAnnotator2112102809f1-a910-432a-8174-8f5c4c43dae9">
+            <import location="/H:/workspace/pneumonia/config/desc/SectionAnnotator2112102809f1-a910-432a-8174-8f5c4c43dae93717428046368105908.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="MergeAnnotator211266033cd3-bbec-4b09-89b4-f689181528fd">
+            <import location="/H:/workspace/pneumonia/config/desc/MergeAnnotator211266033cd3-bbec-4b09-89b4-f689181528fd7815331000565342245.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="Concept Regex2112d8447949-070f-4205-8c46-e832c9bc227b">
+            <import location="/H:/workspace/pneumonia/config/desc/Concept Regex2112d8447949-070f-4205-8c46-e832c9bc227b868804148204270060.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="OverlapFilter2112e7ec1956-b319-4954-9a6b-02e9c0c377b3">
+            <import location="/H:/workspace/pneumonia/config/desc/OverlapFilter2112e7ec1956-b319-4954-9a6b-02e9c0c377b36534200511380148712.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="MergeAnnotator211233252230-dc8c-4c33-8829-7ac2cbe335f1">
+            <import location="/H:/workspace/pneumonia/config/desc/MergeAnnotator211233252230-dc8c-4c33-8829-7ac2cbe335f12213818766205336755.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="Modifier Regex2112fd7da678-1561-4a3d-bca9-f76744e812e3">
+            <import location="/H:/workspace/pneumonia/config/desc/Modifier Regex2112fd7da678-1561-4a3d-bca9-f76744e812e32299094247231081242.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="Exclude Regex21126c7c14b5-a19e-4bfe-a925-cad5e4175a75">
+            <import location="/H:/workspace/pneumonia/config/desc/Exclude Regex21126c7c14b5-a19e-4bfe-a925-cad5e4175a757519529276800620658.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="Concept Pattern Annotator21129b20ec3d-70c8-4cba-aaf1-49d91d21c3bf">
+            <import location="/H:/workspace/pneumonia/config/desc/Concept Pattern Annotator21129b20ec3d-70c8-4cba-aaf1-49d91d21c3bf876090831224799538.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="Concept Pattern Annotator21120fbfa4ad-d5a7-4657-b25c-698c709b0a48">
+            <import location="/H:/workspace/pneumonia/config/desc/Concept Pattern Annotator21120fbfa4ad-d5a7-4657-b25c-698c709b0a489015568123033350841.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="OverlapFilter21120ccd6590-4345-46ef-a3f9-7b0f5b4dbef8">
+            <import location="/H:/workspace/pneumonia/config/desc/OverlapFilter21120ccd6590-4345-46ef-a3f9-7b0f5b4dbef82564608930857310132.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="TermSentenceAnnotator21129e6d82a9-4499-4346-a442-1d36b2e590f8">
+            <import location="/H:/workspace/pneumonia/config/desc/TermSentenceAnnotator21129e6d82a9-4499-4346-a442-1d36b2e590f81275612438399158655.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="ContextAnnotator2112178bf3d0-fce2-4e07-9fb9-ec653c4ac052">
+            <import location="/H:/workspace/pneumonia/config/desc/ContextAnnotator2112178bf3d0-fce2-4e07-9fb9-ec653c4ac0527824566051788521734.xml"/>
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="PneumoniaLogicAnnotator21128df94384-9e25-40f7-b421-cdda7deb0104">
+            <import location="/H:/workspace/pneumonia/config/desc/PneumoniaLogicAnnotator21128df94384-9e25-40f7-b421-cdda7deb01041759187336078941464.xml"/>
+        </delegateAnalysisEngine>
+    </delegateAnalysisEngineSpecifiers>
+    <analysisEngineMetaData>
+        <name>leoPrimitive2112d79ca018-bc56-42b4-ab24-465056694f16</name>
+        <configurationParameters/>
+        <configurationParameterSettings/>
+        <flowConstraints>
+            <fixedFlow>
+                <node>Section Regex2112b94fa589-0ab6-46f2-aa8f-c6b5eebb458e</node>
+                <node>OverlapFilter2112e948f6d7-5f31-4200-b20a-b7d262f11c66</node>
+                <node>SectionAnnotator2112102809f1-a910-432a-8174-8f5c4c43dae9</node>
+                <node>MergeAnnotator211266033cd3-bbec-4b09-89b4-f689181528fd</node>
+                <node>Concept Regex2112d8447949-070f-4205-8c46-e832c9bc227b</node>
+                <node>OverlapFilter2112e7ec1956-b319-4954-9a6b-02e9c0c377b3</node>
+                <node>MergeAnnotator211233252230-dc8c-4c33-8829-7ac2cbe335f1</node>
+                <node>Modifier Regex2112fd7da678-1561-4a3d-bca9-f76744e812e3</node>
+                <node>Exclude Regex21126c7c14b5-a19e-4bfe-a925-cad5e4175a75</node>
+                <node>Concept Pattern Annotator21129b20ec3d-70c8-4cba-aaf1-49d91d21c3bf</node>
+                <node>Concept Pattern Annotator21120fbfa4ad-d5a7-4657-b25c-698c709b0a48</node>
+                <node>OverlapFilter21120ccd6590-4345-46ef-a3f9-7b0f5b4dbef8</node>
+                <node>TermSentenceAnnotator21129e6d82a9-4499-4346-a442-1d36b2e590f8</node>
+                <node>ContextAnnotator2112178bf3d0-fce2-4e07-9fb9-ec653c4ac052</node>
+                <node>PneumoniaLogicAnnotator21128df94384-9e25-40f7-b421-cdda7deb0104</node>
+            </fixedFlow>
+        </flowConstraints>
+        <capabilities/>
+        <operationalProperties>
+            <modifiesCas>true</modifiesCas>
+            <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+            <outputsNewCASes>false</outputsNewCASes>
+        </operationalProperties>
+    </analysisEngineMetaData>
+</analysisEngineDescription>

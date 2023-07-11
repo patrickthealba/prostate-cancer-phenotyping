@@ -1,0 +1,219 @@
+## Metastatic patterns are created by combining the term dictionaries
+## into the smallest two term components, the space after each pattern allows patterns found in succession to  merge
+## into single larger/connected patterns
+## The logic annotator at the end of the pipeline only counts patterns that contain
+## a modifier(diagnosis), anatomy(prostate), and term(metastatic) to be considered a diagnosis
+## All remaining terms are neccessary/helpful in creating complete patterns, but not neccesary for the final output
+## of a metastatic prostate cancer diagnosis
+## Initial diagnosis Patterns
+## All Types
+## Modifier     (Required)
+## Anatomy      (Required)
+## Term         (Required)
+## Hormone
+## Middle
+## Disease
+##DX: Prostate[Anatomy]
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*
+##DX: Metastatic[term]
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+##DX: castrate-resistant [Hormone]
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*
+##DX: Boney [Depth]
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*
+##DX: Cancer [Disease]
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*
+## From here, other combinations of terms can create separate noun phrases
+##Metastatic CAP
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*
+##Blastic metastisis
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+## Ca Prostate
+<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*
+##Prostate CA
+<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*
+<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*
+##Prostate mets
+##Prostate, T1cN1M1b/IV
+<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+##Cancer, T1cN1M1b/IV
+<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+## Metastatic Cancer
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*
+## Metastatic, hormone-castrate
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*
+## ACP with diffuse
+<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*
+##Cancer, castrate-resistant
+<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*
+<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*
+##Castrate-resistant, metastatic
+<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+##Castrate-resistant, prostate
+<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*
+<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*
+## PSA and bony
+<gov.va.vinci.types.Metastasis_Anatomy/>\s*\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*
+## CAP WITH METS
+<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*
+## Metastatic(to the bone)
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*
+## BONY met
+<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+##MEtastatic to bone
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*
+##MEtastatic with
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*
+##Stage(cT3N1M0)
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*
+##Metastatic with bone
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*
+##Cancer of the prostate
+<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*
+##ca prostate mets
+<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+##mets prostate ca
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*
+##prostate cancer with mets
+<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>
+##CRPC with mets
+<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+##cancer to the bone
+<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*
+<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*
+##Prostate with metastasis
+<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>
+##Hormone Resistant  metastatic
+<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+##%with metastatic prostate%'
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*
+## '%diagnosis of metastatic prostate%'  | PMH of stage 4 metastatic prostate  carcinoma
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Term/>
+##with ca prostate/bony metastases
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>
+## diagnosis: stage IV cancer of the prostate
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>
+#with[modifier] history of[modifier] CRPC[disease] with[modifier] metastesis[term] to bones[dept
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Depth/>
+##diagnosis:
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+##diagnosis: metastatic cancer of the prostate
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+##ASSESSMENT: -Prostate cancer with widespread mets
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+##Modifer, Middle, Anatomy
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*
+##Modifier, Middle, Disease
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*
+##History: Prostate metastatic disease or arthritis.
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+##w/castrate resistant metastatic prostate cancer
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+##with metastatic castrate-resistant  prostate
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+##Impression:[modifier] Castrate resistant[hormone] metastatic[term] prostate[anatomy] cancer[disease]
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+##relapsed castrate-resistant prostate cancer
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+##Modifier, Term, Castrate, anatomy, disease
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+##Modifier, Middle, term, hormone, anatomy, disease
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+## diagnosis: osseous metastasis   of prostate
+##with osseous metastasis   of prostate carcinoma.
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+##Cancer of the prostate with metastasis
+<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>
+##Diagnosis: Stage III Prostate Cancer
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+##history of 'history of metastatic prostate%'
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+## '%osseous metastatic%'   '%Metastatic CRPC'
+<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+##'%MEtastatic disease%'
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+##metastatic disease with bony mets
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Depth/>
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Term/>
+## Ossteuss disease, going to be incorreectly getting BONE as well, consider osseus as possible metastatic term instead
+<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Term/>
+##Metastatic prostate cancer
+<gov.va.vinci.types.Stage_Term/>\s*<gov.va.vinci.types.Stage_Middle/>\s*<gov.va.vinci.types.Stage_Value/>
+##ReportText like '%Metastatic CRPC' or ReportText like '%metastatic castrate%' or
+<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Term/>
+## '%prostate cancer to the bone%'
+<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Depth/>
+<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Depth/>
+## PROSTATE[anatomy] CANCER[disease] WITH[modifier] BONE AND LIVER[depth] METS[metastatic]
+<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Depth/>
+<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Term/>
+##f/u of his[modifier] Stage IV[term]high grade[middle] high volume[middle] prostate[anatomy] cancer[disease]
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+##bony metatastatic cancer
+<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+##with h/o[Modifier] prostate[anatomy] cancer[disease] with[middle] bony[depth] mets[[term]m
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Stage_Middle/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Term/>
+##with[modifier] prostate[anatomy] cancer[disease],[middle] stage IV[metastatic]
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Stage_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>
+## Impression: 1. EXTENSIVE METASTATIC DISEASE FROM PROSTATE CANCER INVOLVING BONES
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+##Impression: 1. metastatic disease from prostate
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+## ASSESSMENT/PLAN: 1. stage 4 castrate-resistant prostate cancer
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+##Impression[modifier]:[middle] Castrate resistant[hormone] metastatic[term] prostate[anatomy] cancer[disease]
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>
+##with[modifier] Ca[disease] prostate[anatomy]/[middle] bony[depth] metastases[term]
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Depth/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>
+##Diagnosis[Modifier]: unfavorable HR[middle] castrate resistant[hormone] prostate[anatomy] cancer[disease] ([middle]cT3aN1M0[t]erm
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Term/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>
+<gov.va.vinci.types.Metastasis_Modifier/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Hormone/>\s*<gov.va.vinci.types.Metastasis_Anatomy/>\s*<gov.va.vinci.types.Metastasis_Disease/>\s*<gov.va.vinci.types.Metastasis_Middle/>\s*<gov.va.vinci.types.Metastasis_Term/>

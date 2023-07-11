@@ -1,0 +1,408 @@
+#? Place additional regexes below this line:
+#? The initial set of regex statements comes from ConText.java.
+#? 		 regexPseudo;  pseudo,hist pseudo,neg
+#? 		 regexNegPre;   pre,neg
+#? 		 regexNegPost;
+#? 		 regexPossPre;
+#? 		 regexPossPost;
+#? 		 regexNegEnd;   termin,neg
+#? 		 regexExpPre;
+#? 		 regexExpEnd;
+#? 		 regexHypoPre;   pre,hypo
+#? 		 regexHypoEnd;
+#? 		 regexHypoExpEnd; termin,hypoexp
+#? 		 regexHistPre;
+#? 		 regexHist1w;
+#? 		 regexHistEnd;   termin,hist
+#? 		 regexHistExpEnd;
+#? 		 regexTime;
+#? 		 regexTimeFor;
+#? 		 regexTimeSince;
+#?  ,imm,neg  -- used "minus" as negative, but it is too ambiguous, because dash is often used as a Concept-Value delimiter
+\?,imm,poss
+absence of,pre,neg
+adequate to rule her out,pre,neg
+adequate to rule him out,pre,neg
+adequate to rule out,pre,neg
+adequate to rule the patient out,pre,neg
+although,termin,neg
+any other,pre,neg
+apart from,termin,neg
+are negative,post,neg
+are ruled out,post,neg
+as a cause for,termin,neg
+as a cause of,termin,neg
+as a etiology for,termin,neg
+as a etiology of,termin,neg
+as a reason for,termin,neg
+as a reason of,termin,neg
+as a secondary cause for,termin,neg
+as a secondary cause of,termin,neg
+as a secondary etiology for,termin,neg
+as a secondary etiology of,termin,neg
+as a secondary origin for,termin,neg
+as a secondary origin of,termin,neg
+as a secondary reason for,termin,neg
+as a secondary reason of,termin,neg
+as a secondary source for,termin,neg
+as a secondary source of,termin,neg
+as a source for,termin,neg
+as a source of,termin,neg
+as an cause for,termin,neg
+as an cause of,termin,neg
+as an etiology for,termin,neg
+as an etiology of,termin,neg
+as an origin for,termin,neg
+as an origin of,termin,neg
+as an reason for,termin,neg
+as an reason of,termin,neg
+as an secondary cause for,termin,neg
+as an secondary cause of,termin,neg
+as an secondary etiology for,termin,neg
+as an secondary etiology of,termin,neg
+as an secondary origin for,termin,neg
+as an secondary origin of,termin,neg
+as an secondary reason for,termin,neg
+as an secondary reason of,termin,neg
+as an secondary source for,termin,neg
+as an secondary source of,termin,neg
+as an source for,termin,neg
+as an source of,termin,neg
+as has,termin,neg
+as needed,pre,hypo
+as the cause for,termin,neg
+as the cause of,termin,neg
+as the etiology for,termin,neg
+as the etiology of,termin,neg
+as the origin for,termin,neg
+as the origin of,termin,neg
+as the reason for,termin,neg
+as the reason of,termin,neg
+as the secondary cause for,termin,neg
+as the secondary cause of,termin,neg
+as the secondary etiology for,termin,neg
+as the secondary etiology of,termin,neg
+as the secondary origin for,termin,neg
+as the secondary origin of,termin,neg
+as the secondary reason for,termin,neg
+as the secondary reason of,termin,neg
+as the secondary source for,termin,neg
+as the secondary source of,termin,neg
+as the source for,termin,neg
+as the source of,termin,neg
+as well as any,pre,neg
+aside from,termin,neg
+aunt,pre,exp
+aunt's,pre,exp
+be ruled out,post,poss
+be ruled out for,pre,poss
+because,termin,hypo
+being ruled out,post,poss
+brother,pre,exp
+brother's,pre,exp
+but,termin,neg
+can be ruled out,post,poss
+can be ruled out for,pre,poss
+can rule her out,pre,neg
+can rule her out against,pre,neg
+can rule her out for,pre,neg
+can rule him out,pre,neg
+can rule him out against,pre,neg
+can rule him out for,pre,neg
+can rule out,pre,neg
+can rule out against,pre,neg
+can rule out for,pre,neg
+can rule the patient out,pre,neg
+can rule the patinet out against,pre,neg
+can rule the patinet out for,pre,neg
+cannot,pre,neg
+cause for,termin,neg
+cause of,termin,neg
+causes for,termin,neg
+causes of,termin,neg
+checked for,pre,neg
+clear of,pre,neg
+come back for,pre,hypo
+come back to,pre,hypo
+complains,termin,histexp
+concerned about,pre,poss
+concerning for,pre,poss
+could be ruled out,post,poss
+could be ruled out for,pre,poss
+currently,termin,histexp
+dad,pre,exp
+dad's,pre,exp
+daughter,pre,exp
+declined,pre,neg
+declines,pre,neg
+denied,pre,neg
+denies,pre,neg
+denying,pre,neg
+did not rule out,post,poss
+did rule her out,pre,neg
+did rule her out against,pre,neg
+did rule her out for,pre,neg
+did rule him out,pre,neg
+did rule him out against,pre,neg
+did rule him out for,pre,neg
+did rule out,pre,neg
+did rule out against,pre,neg
+did rule out for,pre,neg
+did rule the patient out,pre,neg
+did rule the patient out against,pre,neg
+did rule the patient out for,pre,neg
+doesn't look like,pre,neg
+doubt,pre,poss
+ED,termin,hist
+emergency department,termin,hist
+etiology for,termin,neg
+etiology of,termin,neg
+evaluate for,pre,neg
+except,termin,neg
+fails to reveal,pre,neg
+family,pre,exp
+fam hx,pre,exp
+father,pre,exp
+father's,pre,exp
+free,post,neg
+free of,pre,neg
+gram negative,pseudo,neg
+grandfather,pre,exp
+grandfather's,pre,exp
+grandmother,pre,exp
+grandmother's,pre,exp
+has been negative,post,neg
+has been ruled out,post,neg
+have been ruled out,post,neg
+her,termin,hypoexp
+his,termin,hypoexp
+history,pre,hist
+history and,pseudo,hist
+history and examination,pseudo,hist
+history and physical,pseudo,hist
+history for,pseudo,hist
+history of chief complaint,pseudo,hist
+history of present illness,pseudo,hist
+history taking,pseudo,hist
+\"history,physical\",pseudo,hist
+however,termin,neg
+h/o,pre,hist
+ho,pre,hist
+hx,pre,hist
+if,pre,hypo
+if negative,pseudo,hypo
+inconsistent with,pre,neg
+is not,pre,neg
+is ruled out,post,neg
+is to be ruled out,post,poss
+is to be ruled out for,pre,poss
+is negative,post,neg
+is neg,post,neg
+isn't,pre,neg
+lack of,pre,neg
+lacked,pre,neg
+likely,pre,poss
+may be ruled out,post,poss
+may be ruled out for,pre,poss
+might be,pre,poss
+might be ruled out,post,poss
+might be ruled out for,pre,poss
+mom,pre,exp
+mom's,pre,exp
+monitor (\w+\s+)for,pre,hypo
+mother,pre,exp
+mother's,pre,exp
+must be ruled out,post,poss
+must be ruled out for,pre,poss
+negative for,pre,neg
+never developed,pre,neg
+never had,pre,neg
+nevertheless,termin,neg
+\bno\b,imm,neg
+no abnormal,pre,neg
+no cause of,pre,neg
+no change,pseudo,neg
+no complaints of,pre,neg
+no definite change,pseudo,neg
+no e\/o,pre,neg
+no ?(\w+ )?evid(ence)?( of| to( suggest))?,pre,neg
+no findings of,pre,neg
+no findings to indicate,pre,neg
+\bno h\/o\b,pre,neg
+no history of,pre,neg
+no increase,pseudo,neg
+no interval change,pseudo,neg
+no longer present,post,neg
+no mammographic evidence of,pre,neg
+no new,pre,neg
+no new evidence,pre,neg
+no other evidence,pre,neg
+no radiographic evidence of,pre,neg
+no sign( of)?,pre,neg
+no significant,pre,neg
+no significant change,pseudo,neg
+no significant interval change,pseudo,neg
+no signs of,pre,neg
+no suggestion of,pre,neg
+no suspicious,pre,neg
+no suspicious change,pseudo,neg
+non diagnostic,post,neg
+not,pre,neg
+not appear,pre,neg
+not appreciate,pre,neg
+not associated with,pre,neg
+not been ruled out,post,poss
+not cause,pseudo,neg
+not certain if,pseudo,neg
+not certain whether,pseudo,neg
+not complain of,pre,neg
+not demonstrate,pre,neg
+not drain,pseudo,neg
+not exhibit,pre,neg
+not extend,pseudo,neg
+not feel,pre,neg
+not had,pre,neg
+not have,pre,neg
+not have evidence of,pre,neg
+not know of,pre,neg
+not known to have,pre,neg
+not necessarily,pseudo,neg
+not on,pseudo,neg
+not only,pseudo,neg
+not reveal,pre,neg
+not ruled out,post,poss
+not see,pre,neg
+not to be,pre,neg
+noted,termin,histexp
+now resolved,post,neg
+or,imm,poss
+origin for,termin,neg
+origin of,termin,neg
+origins for,termin,neg
+origins of,termin,neg
+other possibilities of,termin,neg
+ought to be ruled out,post,poss
+ought to be ruled out for,pre,poss
+past history,pre,hist
+past medical history,pre,hist
+patient,termin,hypoexp
+patient was not,pre,neg
+patient's,termin,hypoexp
+poor history,pseudo,hist
+possible,pre,poss
+poss,pre,poss
+presenting,termin,histexp
+presents,termin,histexp
+previous,one,hist
+probable,pre,poss
+prophylaxis,post,neg
+r\/o,pre,poss
+r\\/o,pre,poss
+r/o,pre,poss
+rather than,pre,neg
+reason for,termin,neg
+reason of,termin,neg
+reasons for,termin,neg
+reasons of,termin,neg
+reported,termin,histexp
+reports,termin,histexp
+resolved,pre,neg
+return,pre,hypo
+ro,pre,poss
+rule her out,pre,poss
+rule her out for,pre,poss
+rule him out,pre,poss
+rule him out for,pre,poss
+rule out,pre,poss
+rule out for,pre,poss
+rule the patient out,pre,poss
+rule the patinet out for,pre,poss
+ruled her out,pre,neg
+ruled her out against,pre,neg
+ruled her out for,pre,neg
+ruled him out,pre,neg
+ruled him out against,pre,neg
+ruled him out for,pre,neg
+ruled out,pre,neg
+ruled out against,pre,neg
+ruled out for,pre,neg
+ruled the patient out,pre,neg
+ruled the patient out against,pre,neg
+ruled the patient out for,pre,neg
+rules her out,pre,neg
+rules her out for,pre,neg
+rules him out,pre,neg
+rules him out for,pre,neg
+rules out,pre,neg
+rules out for,pre,neg
+rules the patient out,pre,neg
+rules the patient out for,pre,neg
+secondary,termin,neg
+secondary to,termin,neg
+should be ruled out,post,poss
+should be ruled out for,pre,poss
+should he,pre,hypo
+should she,pre,hypo
+should the patient,pre,hypo
+should there,pre,hypo
+since,termin,hypo
+sister,pre,exp
+sister's,pre,exp
+social history,pseudo,hist
+son,pre,exp
+source for,termin,neg
+source of,termin,neg
+sources for,termin,neg
+sources of,termin,neg
+states,termin,histexp
+still,termin,neg
+sudden onset of,pseudo,hist
+sufficient to rule her out,pre,neg
+sufficient to rule her out against,pre,neg
+sufficient to rule her out for,pre,neg
+sufficient to rule him out,pre,neg
+sufficient to rule him out against,pre,neg
+sufficient to rule him out for,pre,neg
+sufficient to rule out,pre,neg
+sufficient to rule out against,pre,neg
+sufficient to rule out for,pre,neg
+sufficient to rule the patient out,pre,neg
+sufficient to rule the patient out against,pre,neg
+sufficient to rule the patient out for,pre,neg
+suggest(ive of)?,pre,poss
+suspicious for,pre,poss
+test for,pre,neg
+though,termin,neg
+to exclude,pre,neg
+today,termin,histexp
+trigger event for,termin,neg
+uncle,pre,exp
+uncle's,pre,exp
+unlikely,post,neg
+unremarkable for,pre,neg
+versus,imm,poss
+\bvs\b,imm,poss
+\b\v\b,imm,poss
+was found,termin,histexp
+was negative,post,neg
+was not,pre,neg
+was ruled out,post,neg
+wasn't,pre,neg
+what must be ruled out is,pre,poss
+which,termin,exp
+who,termin,hypoexp
+will be ruled out,post,poss
+will be ruled out for,pre,poss
+with no,pre,neg
+without,pre,neg
+\bw/o\b evidence( of)?,pre,neg
+without any evidence of,pre,neg
+without difficulty,pseudo,neg
+without evidence,pre,neg
+without \w+ evidence,pre,neg
+without indication of,pre,neg
+without sign of,pre,neg
+\bw/o\b,pre,neg
+worrisome for,pre,poss
+worried about,pre,poss
+yet,termin,neg

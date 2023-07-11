@@ -1,0 +1,6 @@
+<gov.va.vinci.types.Exclude/>\s*<gov.va.vinci.types.ConceptModifier/>
+<gov.va.vinci.types.Exclude/>\s*<gov.va.vinci.types.ConceptModifier/>
+<gov.va.vinci.types.ConceptModifier/>\s*<gov.va.vinci.types.Exclude/>
+<gov.va.vinci.types.ConceptModifier/>\s*<gov.va.vinci.types.Exclude/>
+<gov.va.vinci.types.Exclude/>
+

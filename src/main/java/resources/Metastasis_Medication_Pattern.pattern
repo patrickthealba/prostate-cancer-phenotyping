@@ -1,0 +1,6 @@
+##on enzalutamide for
+<gov.va.vinci.types.Metastasis_Medication_Modifier/>\s*<gov.va.vinci.types.Metastasis_Medication/>\s*<gov.va.vinci.types.Metastasis_Pattern/>
+##On [med] since [year] for
+<gov.va.vinci.types.Metastasis_Medication_Modifier/>\s*<gov.va.vinci.types.Metastasis_Medication/>\s*<gov.va.vinci.types.Metastasis_Medication_Modifier/>\s*<gov.va.vinci.types.Metastasis_Pattern/>
+##Metastasis treated with
+<gov.va.vinci.types.Metastasis_Pattern/>\s*<gov.va.vinci.types.Metastasis_Medication_Modifier/>\s*<gov.va.vinci.types.Metastasis_Medication/>
