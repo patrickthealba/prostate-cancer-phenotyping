@@ -1,4 +1,4 @@
-Prostate Phenotyping NLP
+Prostate Cancer Phenotyping NLP
 =============
 
 This is the code for the metastatic prostate cancer NLP system described in JCO informatics here: https://ascopubs.org/doi/full/10.1200/CCI.21.00030
