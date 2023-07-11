@@ -49,7 +49,7 @@ Meaning if the intent of using this system is to identify patients with castrate
 | Hormone_modifier_term     | varchar(150)  | The term in the text that is associated with the hormone modifier.                                                                          |
 | Treatment_modifier        | varchar(150)  | Normalized "Treatment" term type. This modifier gives information related to the treatment of the condition mentioned in the term.                                            |
 | Treatment_term            | varchar(150)  | The term in the text that is associated with the treatment modifier.                                                                        |
-| Castrate_sensitive        | varchar(150)  | Flag indicating if the diagnosis was described as being castrate senstive.  (NOTE:  This was output because identifying these componenets was a necessary aspect of identifying castrate resistance, however the system was never validated on its ability to explicitly identify castrate sensitive patients.)                                          |
+| Castrate_sensitive        | varchar(150)  | Flag indicating if the diagnosis was described as being castrate senstive.  (NOTE:  This was output because identifying these components was a necessary aspect of identifying castrate resistance, however the system was never validated on its ability to explicitly identify castrate-sensitive patients.)                                          |
 | Castrate_resistant        | varchar(150)  | Flag indicating if the diagnosis was described as being castrate resistant.                                           |
 | Anatomy                   | varchar(150)  | Anatomy identified in a cancer pattern.  (Only cases where anatomy = prostate were validated for this implementation)                                                               |
 | mPCa_flag                 | int           | A flag to indicate whether the term is related to metastatic prostate cancer (mPCa). The flag could be 0 (not related) or 1 (related).       |
@@ -66,13 +66,13 @@ To use EchoExtractor:
 
 Follow the instructions to install and configure UIMA AS Steps 2.1-2.9.
 - Start UIMA AS Broker.
-- Configure EchoExtractor reader and listeners.
+- Configure reader and listeners.
 - Three readers are available:
-    - FileCollectionReaderConfig.groovy - Enter the path to input directory to read simple text files. The files need to have .txt extention.
-    - BatchDatabaseCollectionReaderConfig.groovy - Enter the database engine, database name, and input query. Update the batch parameters. If you have only one batch, change the ending index to be less than the batch size. If you are using this reader for batch reads, add sequential numbering column called "RowNo" to your input table. The tags {min} and {max} will be automatically replaced with starting and ending RowNo for each batch until edning RowNo reaches the last endingIndex.
+    - FileCollectionReaderConfig.groovy - Enter the path to the input directory to read simple text files. The files need to have .txt extension.
+    - BatchDatabaseCollectionReaderConfig.groovy - Enter the database engine, database name, and input query. Update the batch parameters. If you have only one batch, change the ending index to be less than the batch size. If you are using this reader for batch reads, add a sequential numbering column called "RowNo" to your input table. The tags {min} and {max} will be automatically replaced with starting and ending RowNo for each batch until ending RowNo reaches the last endingIndex.
     - DatabaseCollectionReaderConfig.groovy - Enter the database engine, database name, and input query.
 - Three listeners are available:
-    - SimpleXmiListenerConfig.groocy - Enter the path to the output directory. A new directory with xmi files will be created.
+    - SimpleXmiListenerConfig. groovy - Enter the path to the output directory. A new directory with xmi files will be created.
     - CsvListenerConfig.groovy - this is an example of a custom CSV listener
     - MetastasisDatabaseListenerConfig.groovy - this is an example of a custom database listener.
 
