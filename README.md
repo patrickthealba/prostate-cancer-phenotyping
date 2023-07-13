@@ -28,13 +28,15 @@ Defined in the Metastasis_Pipeline class, uses a collection of annotation compon
 
 ### Output Types
 
-The current implementation of this system will output all instances of a  cancer pattern identified (regardless of site, mpca or crpc status).  This output will contain any combination of the following components.
-however, the only validated output of this system is rolled up in the logic annotator which produces the following flags:
+The current implementation of this system will output all instances of a  cancer pattern identified (regardless of site, mpca or crpc status).  This output will contain any combination of the components identified in the output table below, however, the only validated output of this system is the following flags which are populated in the logic annotator:
+
 mPCa_flag: An instance of a metastatic prostate cancer diagnosis.
+
 OR
+
 Castrate_resistant: A flag to identify if the complete pattern is a positive castrate-resistant diagnosis.
 
-Meaning if the intent of using this system is to identify patients with castrate-resistant prostate cancer, both the mpca_flag and castrate_resistant variable should = 1.
+Meaning if the intent of using this system is to identify patients with metastatic castrate-resistant prostate cancer, both the mpca_flag and castrate_resistant variable should = 1.
 
 | Output Type               | Data Type     | Description                                                                                                                                 |
 |---------------------------|---------------|---------------------------------------------------------------------------------------------------------------------------------------------|
@@ -62,7 +64,8 @@ Meaning if the intent of using this system is to identify patients with castrate
 
 
 This system is based on Leo architecture extending UIMA AS. For more info on Leo [http://department-of-veterans-affairs.github.io/Leo/]
-To use EchoExtractor:
+
+To use this pipeline:
 
 Follow the instructions to install and configure UIMA AS Steps 2.1-2.9.
 - Start UIMA AS Broker.
