@@ -3,7 +3,11 @@ Prostate Cancer Phenotyping NLP
 
 This is the code for the metastatic prostate cancer NLP system described in JCO informatics here: https://ascopubs.org/doi/full/10.1200/CCI.21.00030
 
-And adapted and expanded for castrate resistant diagnosis in another paper currently under review. 
+And adapted and expanded for castrate resistant diagnosis here: 
+
+Danielle Candelieri-Surette et al., Development and Validation of a Tool to Identify Patients Diagnosed With Castration-Resistant Prostate Cancer. JCO Clin Cancer Inform 7, e2300085(2023).
+DOI:10.1200/CCI.23.00085
+
 
 
 Project description:
