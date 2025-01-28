@@ -7,7 +7,7 @@ import gov.va.vinci.leo.tools.LeoUtils
 
 
 int batchSize = 1000
-String url = "jdbc:sqlserver://vhacdwrb02:1433;databasename=<your_database>;integratedSecurity=true"
+String url = "jdbc:sqlserver://<your_server>:1433;databasename=<your_database>;integratedSecurity=true"
 String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 String dbUser = ""
 String dbPwd = ""
